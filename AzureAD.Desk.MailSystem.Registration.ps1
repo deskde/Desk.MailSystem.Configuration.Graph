@@ -173,7 +173,7 @@ Function ConfigureApplications
    $configFile = $pwd.Path + "\Desk.MailSystem.AAD.App.json"
    Write-Host "Store app information ($configFile)"
    $certificateDescriptor = @{ };
-   $dictionary = [ordered]@{ "ApiUrl" = "https://graph.microsoft.com/";"Tenant" = $tenantName;"ClientId" = $clientAadApplication.AppId;"ClientSecret" = $clientAppKey; };
+   $dictionary = [ordered]@{ "AppId" = $currentAppId;"Tenant" = $tenantName;"ClientId" = $clientAadApplication.AppId;"ClientSecret" = $clientAppKey; };
    $dictionary | ConvertTo-Json | Out-File $configFile
    Write-Host ""
    Write-Host "IMPORTANT: Please follow the instructions below to complete a few manual steps in the Azure portal":
